@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мій профіль</title>
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <div class="profile-container">
+    <h2>Мій профіль</h2>
+
+<div class="profile-photo-section">
+  <img id="avatarPreview" src="" alt="Avatar" class="profile-avatar" />
+
+<label for="avatarInput" class="upload-avatar-button">Оберіть фото</label>
+<input type="file" id="avatarInput" accept="image/*" style="display: none;" />
+</div>
+
+    <p><strong>Логін:</strong> 
+      <span class="username-container">
+        <span id="userName"></span>
+        <img src="img/edit.png" alt="Редагувати" class="edit-icon" id="editUsernameBtn" />
+      </span>
+    </p>
+    
+    <p><strong>Email:</strong> <span id="userEmail">Завантаження...</span></p>
+    <button class="logout-btn" id="logoutBtn">Вийти з аккаунту</button>
+  </div>
+
+  <script src="js/loadHeader.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

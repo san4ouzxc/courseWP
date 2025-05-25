@@ -1,0 +1,37 @@
+.input-wrapper {
+  position: relative;
+  max-width: 300px;
+}
+
+.suggestions {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  display: none; /* скрыто по умолчанию */
+}
+
+.suggestions div {
+  padding: 8px;
+  cursor: pointer;
+  color: #333; /* цвет текста */
+}
+
+.suggestions div:hover {
+  background-color: #f0f0f0;
+}
+
+.ticket-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ticket-form .form-group {
+  flex: 1 1 300px;
+  max-width: 300px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вхід в аккаунт</title>
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <div class="login-container">
+    <form class="login-form" action="#" method="POST">
+      <h2>Вхід в аккаунт</h2>
+
+      <label for="username">Логін або Email:</label>
+      <input type="text" id="username" name="username" placeholder="Введіть логін або email" required />
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введіть пароль" required />
+
+      <button type="submit">Увійти</button>
+
+      <div class="register-link" onclick="location.href='registration.html'">Немає аккаунта? Зареєструватися</div>
+    </form>
+  </div>
+
+  <script src="js/loadHeader.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

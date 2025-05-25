@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Реєстрація</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/registration.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div id="header-container"></div>
+
+  <div class="login-container">
+    <form class="login-form" action="#" method="POST">
+      <h2>Реєстрація</h2>
+
+      <label for="username">Логін:</label>
+      <input type="text" id="username" name="username" placeholder="Введіть логін" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Введіть email" required />
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введіть пароль" required />
+
+      <label for="confirm-password">Підтвердження паролю:</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Підтвердіть пароль" required />
+
+      <button type="submit">Зареєструватися</button>
+
+      <div class="register-link" onclick="location.href='login.html'">Вже є аккаунт? Увійти</div>
+    </form>
+  </div>
+
+  <script src="js/loadHeader.js"></script>
+  <script src="js/registration.js"></script>
+</body>
+</html>

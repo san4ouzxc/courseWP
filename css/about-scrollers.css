@@ -1,0 +1,29 @@
+/* css/about-scrollers.css */
+
+.container.vertical-scroll {
+  position: fixed;
+  top: 0;
+  width: 150px;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none; /* чтобы клики проходили */
+  z-index: 1000;
+}
+
+.char {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 24px;
+  user-select: none;
+  transform-origin: center center;
+  transform: rotate(90deg);
+  text-align: center;
+  color: white;
+  font-family: Montserrat;
+}
+
+#container1 { right: 0; }
+#container2 { right: 25px; }
+#container3 { right: 50px; }

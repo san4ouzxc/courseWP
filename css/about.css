@@ -1,0 +1,21 @@
+/* about.css */
+
+/* Фон такой же, как в login.html */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: url('../img/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* Убираем черную полоску у хедера */
+.main-header {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+
+

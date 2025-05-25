@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TripPlanner - Плануй подорож мрії</title>
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/autocomplete.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+
+
+<main class="main-content">
+  <div class="search-wrapper">
+    <h2 class="form-title">Пошук квитків і подорожей</h2>
+    <form class="ticket-form">
+      
+      <div class="form-group">
+        <label for="from">Звідки:</label>
+        <div class="input-wrapper">
+          <input type="text" id="from" name="from" placeholder="Введіть пункт відправлення" autocomplete="off" required />
+          <div class="suggestions" id="from-suggestions"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="to">Куди:</label>
+        <div class="input-wrapper">
+          <input type="text" id="to" name="to" placeholder="Введіть пункт призначення" autocomplete="off" required />
+          <div class="suggestions" id="to-suggestions"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Дата поїздки:</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="passengers">Кількість пасажирів:</label>
+        <input type="number" id="passengers" name="passengers" min="1" value="1" required />
+      </div>
+
+      <button type="submit">Запланувати подорож</button>
+    </form>
+  </div>
+</main>
+
+
+
+<div id="notification" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+background: #4caf50; color: white; padding: 10px 20px; border-radius: 5px; display: none; z-index: 1000;">
+  Поїздку додано!
+</div>
+
+<script src="js/loadHeader.js"></script>
+<script src="js/tripsManage.js"></script>
+<script src="js/autocomplete.js"></script>
+
+
+</body>
+</html>
