@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const headerContainer = document.getElementById('header-container');
       headerContainer.innerHTML = data;
 
-      // Навешиваем обработчики на ссылки
       const navLinks = headerContainer.querySelectorAll('.nav-links a, .logo-link');
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // 👉 ПОКАЗЫВАЕМ/СКРЫВАЕМ КНОПКИ ПОСЛЕ ЗАГРУЗКИ ХЕДЕРА
       const token = localStorage.getItem('token');
       const loginLink = headerContainer.querySelector('a[href="login.html"]');
       const accountLink = headerContainer.querySelector('#accountLink');

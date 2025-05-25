@@ -80,7 +80,6 @@ function enableEdit() {
         return;
       }
 
-      // Обновляем отображение и localStorage
       localStorage.setItem('username', newUsername);
 
       container.innerHTML = `

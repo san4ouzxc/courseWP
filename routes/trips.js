@@ -3,7 +3,6 @@ const router = express.Router();
 const Trip = require('../models/Trip');
 const authMiddleware = require('../middleware/authMiddleware');
 
-// Получить все поездки текущего пользователя
 router.get('/', authMiddleware, async (req, res) => {
   try {
     const userId = req.user.id;
@@ -14,7 +13,6 @@ router.get('/', authMiddleware, async (req, res) => {
   }
 });
 
-// Добавить новую поездку
 router.post('/', authMiddleware, async (req, res) => {
   const { from, to, date, passengers } = req.body;
   const userId = req.user.id;

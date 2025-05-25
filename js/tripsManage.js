@@ -4,7 +4,8 @@ function showNotification(message) {
   notif.style.display = 'block';
   setTimeout(() => {
     notif.style.display = 'none';
-  }, 3000); // уведомление пропадает через 3 секунды
+  }, 
+  3000); 
 }
 
 document.querySelector('.ticket-form').addEventListener('submit', async (e) => {

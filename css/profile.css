@@ -39,7 +39,7 @@
   position: relative;
   display: inline-block;
   text-align: center;
-  padding-right: 30px; /* пространство справа под иконку */
+  padding-right: 30px;
 }
 
 .edit-icon {

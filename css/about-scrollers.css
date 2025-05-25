@@ -1,4 +1,3 @@
-/* css/about-scrollers.css */
 
 .container.vertical-scroll {
   position: fixed;
@@ -6,7 +5,7 @@
   width: 150px;
   height: 100vh;
   overflow: hidden;
-  pointer-events: none; /* чтобы клики проходили */
+  pointer-events: none; 
   z-index: 1000;
 }
 

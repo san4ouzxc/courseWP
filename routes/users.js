@@ -8,7 +8,6 @@ const authMiddleware = require('../middleware/authMiddleware'); // <-- импо�
 
 
 
-// PATCH /api/users/update-username
 router.patch('/update-username', authMiddleware, async (req, res) => {
   const userId = req.user.id;
   const { username } = req.body;
@@ -18,7 +17,6 @@ router.patch('/update-username', authMiddleware, async (req, res) => {
   }
 
   try {
-    // Проверка: нет ли такого логина у другого пользователя
     const existingUser = await User.findOne({ username });
     if (existingUser && existingUser._id.toString() !== userId) {
       return res.status(400).json({ message: 'Цей логін уже зайнятий' });

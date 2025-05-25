@@ -1,6 +1,3 @@
-/* about.css */
-
-/* Фон такой же, как в login.html */
 body, html {
   margin: 0;
   padding: 0;
@@ -11,7 +8,6 @@ body, html {
   color: white;
 }
 
-/* Убираем черную полоску у хедера */
 .main-header {
   background-color: transparent !important;
   box-shadow: none !important;

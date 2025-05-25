@@ -71,7 +71,7 @@ body {
   padding: 2rem;
   min-height: calc(100vh - 80px);
   display: flex;
-  justify-content: center; /* центрируем по горизонтали */
+  justify-content: center; 
   align-items: flex-start;
   padding-top: 20vh;
 }

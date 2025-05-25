@@ -9,13 +9,11 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-
 const uploadPath = path.join(__dirname, '../public/uploads');
 if (!fs.existsSync(uploadPath)) {
   fs.mkdirSync(uploadPath, { recursive: true });
 }
 
-// Настройки хранения файла
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'public/uploads');
@@ -28,17 +26,16 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Регистрация
 router.post('/register', async (req, res) => {
   try {
     const { username, email, password } = req.body; 
 
     if (!email || !password || !username) {
-      return res.status(400).json({ message: 'Username, Email и пароль обязательны' });
+      return res.status(400).json({ message: 'Ім’я користувача, email та пароль обов’язкові' });
     }
 
     const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ message: 'Пользователь с таким email уже существует' });
+    if (existingUser) return res.status(400).json({ message: 'Користувач з таким email вже існує' });
 
     const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(password, salt);
@@ -46,30 +43,30 @@ router.post('/register', async (req, res) => {
     const newUser = new User({ username, email, passwordHash });
     await newUser.save();
 
-    res.status(201).json({ message: 'Пользователь зарегистрирован' });
+    res.status(201).json({ message: 'Користувача зареєстровано' });
   } catch (err) {
-    res.status(500).json({ message: 'Ошибка сервера' });
+    res.status(500).json({ message: 'Помилка сервера' });
   }
 });
 
-
-// Вход
 router.post('/login', async (req, res) => {
   try {
     const { identifier, password } = req.body;
-if (!identifier || !password) {
-  return res.status(400).json({ message: 'Логін/Email та пароль обов\'язкові' });
-}
+    if (!identifier || !password) {
+      return res.status(400).json({ message: 'Логін/Email та пароль обов’язкові' });
+    }
 
-const user = await User.findOne({
-  $or: [
-    { email: identifier },
-    { username: identifier }
-  ]
-});
+    const user = await User.findOne({
+      $or: [
+        { email: identifier },
+        { username: identifier }
+      ]
+    });
+
+    if (!user) return res.status(400).json({ message: 'Невірний email або пароль' });
 
     const isMatch = await bcrypt.compare(password, user.passwordHash);
-    if (!isMatch) return res.status(400).json({ message: 'Неверный email или пароль' });
+    if (!isMatch) return res.status(400).json({ message: 'Невірний email або пароль' });
 
     const token = jwt.sign({ id: user._id, email: user.email, username: user.username }, process.env.JWT_SECRET, {
       expiresIn: process.env.TOKEN_EXPIRES_IN || '1d'
@@ -82,7 +79,7 @@ const user = await User.findOne({
       avatarUrl: user.avatarUrl || '/uploads/default-avatar.png'
     });
   } catch (err) {
-    res.status(500).json({ message: 'Ошибка сервера' });
+    res.status(500).json({ message: 'Помилка сервера' });
   }
 });
 

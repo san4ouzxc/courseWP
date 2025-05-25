@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // После регистрации — авторизация
       const loginResponse = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         headers: {
@@ -47,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Сохраняем токен и переходим в профиль
       localStorage.setItem("token", loginData.token);
       localStorage.setItem("email", loginData.email);
       localStorage.setItem("username", loginData.username);  // не забудь
